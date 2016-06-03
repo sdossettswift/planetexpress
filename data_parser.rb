@@ -13,6 +13,17 @@ leela_revenue = 0
 bender_revenue = 0
 fry_revenue = 0
 amy_revenue = 0
+total_revenue = 0
+
+leela_bonus = 0
+bender_bonus = 0
+fry_bonus = 0
+amy_bonus = 0
+
+
+best_seller = 0
+employee_of_the_week = 0
+best_customer = 0
 
 
 CSV.foreach('planet_express_logs.csv', headers: true) do |row|
@@ -47,7 +58,7 @@ end
     puts " "
     puts "Leela shipped #{leela_shipments}."
     puts "Leela brought in $ #{leela_revenue}."
-    
+
 
 erb = File.read("report.erb")
 html= ERB.new(erb).result(binding)
