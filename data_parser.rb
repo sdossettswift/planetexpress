@@ -1,5 +1,6 @@
 require 'csv'
 require 'pp'
+require 'erb'
 
 shipments = []
 # Counter for Shipments
@@ -40,7 +41,7 @@ end
     puts "Bender shipped #{bender_shipments}."
     puts "Leela shipped #{leela_shipments}."
 
-    
+
     puts "Fry brought in $#{fry_revenue}."
     puts "Amy brought in $ #{amy_revenue}."
     puts "Bender brought in $ #{bender_revenue}."
@@ -79,3 +80,7 @@ end
 # Uranus,Pizza,66,10000
 # Saturn,Pizza,26,1000
 # Mercury,Pizza,36,80000
+
+erb = File.read("report.erb")
+html= ERB.new(erb).result(binding)
+File.open("index.html", "wb") {|file| file << html}
