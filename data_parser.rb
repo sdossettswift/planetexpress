@@ -46,7 +46,6 @@ end
   bender_bonus = as_money((bender_revenue.to_i * 0.1))
 
 
-
     puts "Fry shipped #{fry_shipments}."
     puts "Fry brought in #{fry_revenue}."
     puts "Fry earned a #{fry_bonus} bonus"

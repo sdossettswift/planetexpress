@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script src="https://use.fontawesome.com/39c042c263.js"></script>
         <link rel='shortcut icon' href='favicon.ico' type='images/x-icon'/ >
         <link rel="stylesheet" href="normalize.css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
@@ -42,18 +43,89 @@
         <h1>Total Weekly Revenue</h1>
         <h2><%=total_revenue%></h2>
 
-        <h2>Employee of the Week</h2>
-        <h3><%=employee_of_the_week%></h3>
+        <table border="1">
+                <tr>
+                  <th>Pilot</th>
+                  <th>Destination</th>
+                  <th>Shipment</th>
+                  <th>Crates</th>
+                  <th>Money</th>
+                </tr>
+                <% shipment_as_hash.each do |shipment| %>
+                  <tr>
+                    <td><%= shipment["Pilot"]%></td>
+                    <td><%= shipment["Destination"]%></td>
+                    <td><%= shipment["Shipment"]%></td>
+                    <td><%= shipment["Crates"]%></td>
+                    <td><%= as_money(shipment["Money"]) %></td>
+                  </tr>
+                <%end%>
+              </table>
 
-        <h3>Best Seller</h3>
-        <h4><%=best_seller %></h4>
-
-
-        <h3>Best Customer</h3>
-        <h4><%=best_customer%></h4>
 
 
         <h1>Revenue Per Employee</h1>
         <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+
+        <h2>Bonuses</h2>
+        <div class="wrapper">
+          <div class="character_wrapper">
+            <div class="character">
+              <div class="gif"><img src="images/fry.gif" alt="" /></div>
+              <div class="name">Fry</div>
+              <div class="bonus">Bonus: <%=fry_bonus%></div>
+            </div>
+          </div>
+          <div class="character_wrapper">
+            <div class="character">
+              <div class="gif"><img src="images/amy.gif" alt="" /></div>
+              <div class="name">Amy</div>
+              <div class="bonus">Bonus:<%=amy_bonus%></div>
+            </div>
+          </div>
+          <div class="character_wrapper">
+            <div class="character">
+              <div class="gif"><img src="images/bender.gif" alt="" /></div>
+              <div class="name">Bender</div>
+              <div class="bonus">Bonus:<%=bender_bonus%></div>
+            </div>
+          </div>
+          <div class="character_wrapper">
+            <div class="character">
+              <div class="gif"><img src="images/leela.gif" alt="" /></div>
+              <div class="name">Leela</div>
+              <div class="bonus">Bonus:<%=leela_bonus%></div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <i class="fa fa-space-shuttle" aria-hidden="true"></i>
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+        <i class="fa fa-beer" aria-hidden="true"></i>
+        <i class="fa fa-bolt" aria-hidden="true"></i>
+        <i class="fa fa-book" aria-hidden="true"></i>
+        <i class="fa fa-glass" aria-hidden="true"></i>
+        <i class="fa fa-rocket" aria-hidden="true"></i>
+        <i class="fa fa-btc" aria-hidden="true"></i>
+        <i class="fa fa-pied-piper" aria-hidden="true"></i>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </body>
 </html>
