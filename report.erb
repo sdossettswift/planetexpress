@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://use.fontawesome.com/39c042c263.js"></script>
-        <link rel='shortcut icon' href='favicon.ico' type='images/x-icon'/ >
+        <link rel='shortcut icon' href='favicon.ico' type='images/x-icon'/>
         <link rel="stylesheet" href="normalize.css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
 
@@ -38,68 +38,159 @@
         </script>
     </head>
     <body>
-      <img id="Planet_Express_logo"src="images/pegd2.png"/>
-
-        <h1>Total Weekly Revenue</h1>
-        <h2><%=total_revenue%></h2>
-
-        <table border="1">
-                <tr>
-                  <th>Pilot</th>
-                  <th>Destination</th>
-                  <th>Shipment</th>
-                  <th>Crates</th>
-                  <th>Money</th>
-                </tr>
-                <% shipment_as_hash.each do |shipment| %>
-                  <tr>
-                    <td><%= shipment["Pilot"]%></td>
-                    <td><%= shipment["Destination"]%></td>
-                    <td><%= shipment["Shipment"]%></td>
-                    <td><%= shipment["Crates"]%></td>
-                    <td><%= as_money(shipment["Money"]) %></td>
-                  </tr>
-                <%end%>
-              </table>
-
-
-
-        <h1>Revenue Per Employee</h1>
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
-
-
-        <h2>Bonuses</h2>
-        <div class="wrapper">
-          <div class="character_wrapper">
-            <div class="character">
-              <div class="gif"><img src="images/fry.gif" alt="" /></div>
-              <div class="name">Fry</div>
-              <div class="bonus">Bonus: <%=fry_bonus%></div>
-            </div>
-          </div>
-          <div class="character_wrapper">
-            <div class="character">
-              <div class="gif"><img src="images/amy.gif" alt="" /></div>
-              <div class="name">Amy</div>
-              <div class="bonus">Bonus:<%=amy_bonus%></div>
-            </div>
-          </div>
-          <div class="character_wrapper">
-            <div class="character">
-              <div class="gif"><img src="images/bender.gif" alt="" /></div>
-              <div class="name">Bender</div>
-              <div class="bonus">Bonus:<%=bender_bonus%></div>
-            </div>
-          </div>
-          <div class="character_wrapper">
-            <div class="character">
-              <div class="gif"><img src="images/leela.gif" alt="" /></div>
-              <div class="name">Leela</div>
-              <div class="bonus">Bonus:<%=leela_bonus%></div>
-            </div>
-          </div>
+        <div class="Header">
+            <h2>Planet Express</h2>
+            <h3>Weekly Sales Report</h3>
         </div>
 
+        <h1>Total Weekly Revenue:
+            <%=total_revenue%></h1>
+
+        <h1>Revenue by Planet:</h1>
+
+        <div class="wrapper">
+            <div class="planet_wrapper">
+                <div class="planet">
+                    <div class="planet-name">
+                        Mars</div>
+                    <div class="planet_revenue">
+                        <%=mars_revenue%>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_wrapper">
+                <div class="planet">
+                    <div class="planet-name">
+                        Earth</div>
+                    <div class="planet_revenue">
+                        <%=earth_revenue%>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_wrapper">
+                <div class="planet">
+                    <div class="planet-name">
+                        Moon</div>
+                    <div class="planet_revenue">
+                        <%=moon_revenue%>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_wrapper">
+                <div class="planet">
+                    <div class="planet-name">
+                        Uranus</div>
+                    <div class="planet_revenue">
+                        <%=uranus_revenue%>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_wrapper">
+                <div class="planet">
+                    <div class="planet-name">
+                        Pluto</div>
+                    <div class="planet_revenue">
+                        <%=pluto_revenue%>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_wrapper">
+                <div class="planet">
+                    <div class="planet-name">
+                        Saturn</div>
+                    <div class="planet_revenue">
+                        <%=saturn_revenue%>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_wrapper">
+                <div class="planet">
+                    <div class="planet-name">
+                        Mercury</div>
+                    <div class="planet_revenue">
+                        <%=mercury_revenue%>
+                    </div>
+                </div>
+            </div>
+            <div class="planet_wrapper">
+                <div class="planet">
+                    <div class="planet-name">
+                        Jupiter</div>
+                    <div class="planet_revenue">
+                        <%=jupiter_revenue%>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h1>Employee Bonuses</h1>
+        <div class="wrapper">
+            <div class="character_wrapper">
+                <div class="character">
+                    <div class="gif"><img src="images/fry.gif" alt=""/></div>
+                    <div class="name">Fry</div>
+                    <div class="bonus">Bonus:
+                        <%=fry_bonus%></div>
+                    <div class="shipments_made">
+                        Shipments:
+                        <%=fry_shipments%></div>
+                </div>
+            </div>
+            <div class="character_wrapper">
+                <div class="character">
+                    <div class="gif"><img src="images/amy.gif" alt=""/></div>
+                    <div class="name">Amy</div>
+                    <div class="bonus">Bonus:<%=amy_bonus%></div>
+                    <div class="shipments_made">
+                        Shipments:
+                        <%=amy_shipments%></div>
+                </div>
+            </div>
+            <div class="character_wrapper">
+                <div class="character">
+                    <div class="gif"><img src="images/bender.gif" alt=""/></div>
+                    <div class="name">Bender</div>
+                    <div class="bonus">Bonus:<%=bender_bonus%></div>
+                    <div class="shipments_made">
+                        Shipments:
+                        <%=bender_shipments%></div>
+                </div>
+            </div>
+            <div class="character_wrapper">
+                <div class="character">
+                    <div class="gif"><img src="images/leela.gif" alt=""/></div>
+                    <div class="name">Leela</div>
+                    <div class="bonus">Bonus:<%=leela_bonus%></div>
+                    <div class="shipments_made">
+                        Shipments:
+                        <%=leela_shipments%></div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "chart">
+          <table border=".5">
+            <tr>
+                <th>Pilot</th>
+                <th>Destination</th>
+                <th>Shipment</th>
+                <th>Crates</th>
+                <th>Amount</th>
+            </tr>
+            <% shipment_as_hash.each do |shipment| %>
+            <tr>
+                <td><%= shipment["Pilot"]%></td>
+                <td><%= shipment["Destination"]%></td>
+                <td><%= shipment["Shipment"]%></td>
+                <td><%= shipment["Crates"]%></td>
+                <td><%= as_money(shipment["Money"]) %></td>
+            </tr>
+            <%end%>
+        </table>
+</div>
+        <h1>Revenue Per Employee</h1>
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
 
         <!-- <i class="fa fa-space-shuttle" aria-hidden="true"></i>
         <i class="fa fa-globe" aria-hidden="true"></i>
@@ -113,19 +204,6 @@
         <i class="fa fa-btc" aria-hidden="true"></i>
         <i class="fa fa-pied-piper" aria-hidden="true"></i>
  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </body>
 </html>
