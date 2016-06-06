@@ -39,18 +39,19 @@
     </head>
     <body>
         <div class="Header">
-            <h2>Planet Express</h2>
+            <img id="logo" src="images/planet_express.png" />
             <h3>Weekly Sales Report</h3>
         </div>
 
-        <h1>Total Weekly Revenue:
-            <%=total_revenue%></h1>
+        <h1>Total Weekly Revenue</h1>
 
-        <h1>Revenue by Planet:</h1>
+        <h2><%=total_revenue%></h2>
+
+        <h1>Revenue by Destination</h1>
 
         <div class="wrapper">
             <div class="planet_wrapper">
-                <div class="planet">
+                <div class="planet" id="Mars">
                     <div class="planet-name">
                         Mars</div>
                     <div class="planet_revenue">
@@ -59,7 +60,7 @@
                 </div>
             </div>
             <div class="planet_wrapper">
-                <div class="planet">
+                <div class="planet" id="Earth">
                     <div class="planet-name">
                         Earth</div>
                     <div class="planet_revenue">
@@ -68,7 +69,7 @@
                 </div>
             </div>
             <div class="planet_wrapper">
-                <div class="planet">
+                <div class="planet" id="Moon">
                     <div class="planet-name">
                         Moon</div>
                     <div class="planet_revenue">
@@ -77,7 +78,7 @@
                 </div>
             </div>
             <div class="planet_wrapper">
-                <div class="planet">
+                <div class="planet" id="Uranus">
                     <div class="planet-name">
                         Uranus</div>
                     <div class="planet_revenue">
@@ -86,7 +87,7 @@
                 </div>
             </div>
             <div class="planet_wrapper">
-                <div class="planet">
+                <div class="planet" id="Pluto">
                     <div class="planet-name">
                         Pluto</div>
                     <div class="planet_revenue">
@@ -95,7 +96,7 @@
                 </div>
             </div>
             <div class="planet_wrapper">
-                <div class="planet">
+                <div class="planet" id= "Saturn">
                     <div class="planet-name">
                         Saturn</div>
                     <div class="planet_revenue">
@@ -104,7 +105,7 @@
                 </div>
             </div>
             <div class="planet_wrapper">
-                <div class="planet">
+                <div class="planet" id="Mercury">
                     <div class="planet-name">
                         Mercury</div>
                     <div class="planet_revenue">
@@ -113,7 +114,7 @@
                 </div>
             </div>
             <div class="planet_wrapper">
-                <div class="planet">
+                <div class="planet" id= "Jupiter">
                     <div class="planet-name">
                         Jupiter</div>
                     <div class="planet_revenue">
@@ -122,7 +123,6 @@
                 </div>
             </div>
         </div>
-
 
         <h1>Employee Bonuses</h1>
         <div class="wrapper">
@@ -141,7 +141,7 @@
                 <div class="character">
                     <div class="gif"><img src="images/amy.gif" alt=""/></div>
                     <div class="name">Amy</div>
-                    <div class="bonus">Bonus:<%=amy_bonus%></div>
+                    <div class="bonus">Bonus: <%=amy_bonus%></div>
                     <div class="shipments_made">
                         Shipments:
                         <%=amy_shipments%></div>
@@ -151,7 +151,7 @@
                 <div class="character">
                     <div class="gif"><img src="images/bender.gif" alt=""/></div>
                     <div class="name">Bender</div>
-                    <div class="bonus">Bonus:<%=bender_bonus%></div>
+                    <div class="bonus">Bonus: <%=bender_bonus%></div>
                     <div class="shipments_made">
                         Shipments:
                         <%=bender_shipments%></div>
@@ -161,49 +161,51 @@
                 <div class="character">
                     <div class="gif"><img src="images/leela.gif" alt=""/></div>
                     <div class="name">Leela</div>
-                    <div class="bonus">Bonus:<%=leela_bonus%></div>
+                    <div class="bonus">Bonus: <%=leela_bonus%></div>
                     <div class="shipments_made">
-                        Shipments:
+                        Shipments: 
                         <%=leela_shipments%></div>
                 </div>
             </div>
         </div>
-
-        <div class = "chart">
-          <table border=".5">
-            <tr>
-                <th>Pilot</th>
-                <th>Destination</th>
-                <th>Shipment</th>
-                <th>Crates</th>
-                <th>Amount</th>
-            </tr>
-            <% shipment_as_hash.each do |shipment| %>
-            <tr>
-                <td><%= shipment["Pilot"]%></td>
-                <td><%= shipment["Destination"]%></td>
-                <td><%= shipment["Shipment"]%></td>
-                <td><%= shipment["Crates"]%></td>
-                <td><%= as_money(shipment["Money"]) %></td>
-            </tr>
-            <%end%>
-        </table>
-</div>
+        <h1>Shipment Detail</h1>
+        <div class="chart">
+            <table border=".5">
+                <tr>
+                    <th>Pilot</th>
+                    <th>Destination</th>
+                    <th>Shipment</th>
+                    <th>Crates</th>
+                    <th>Amount</th>
+                </tr>
+                <% shipment_as_hash.each do |shipment| %>
+                <tr>
+                    <td><%= shipment["Pilot"]%></td>
+                    <td><%= shipment["Destination"]%></td>
+                    <td><%= shipment["Shipment"]%></td>
+                    <td><%= shipment["Crates"]%></td>
+                    <td><%= as_money(shipment["Money"]) %></td>
+                </tr>
+                <%end%>
+            </table>
+        </div>
         <h1>Revenue Per Employee</h1>
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        <div class ="chart">
+            <div id="piechart" style="width: 500px; height: 400px;"></div>
+        </div>
 
-        <!-- <i class="fa fa-space-shuttle" aria-hidden="true"></i>
-        <i class="fa fa-globe" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-        <i class="fa fa-beer" aria-hidden="true"></i>
-        <i class="fa fa-bolt" aria-hidden="true"></i>
-        <i class="fa fa-book" aria-hidden="true"></i>
-        <i class="fa fa-glass" aria-hidden="true"></i>
-        <i class="fa fa-rocket" aria-hidden="true"></i>
-        <i class="fa fa-btc" aria-hidden="true"></i>
-        <i class="fa fa-pied-piper" aria-hidden="true"></i>
- -->
+        <div class ="footer">
+          c. 2016 S. Dossett Swift <br />
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-rocket" aria-hidden="true"></i>
+        </div>
+
+
+
+
+
+
 
     </body>
 </html>
