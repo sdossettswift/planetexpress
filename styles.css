@@ -1,47 +1,158 @@
-img#Planet_Express_logo {
-    width: 300px;
-    position: absolute;
-    top: 10px;
-    right:10px;
-  }
-  * {
-    background: #2c3e50;
-    color: #ecf0f1;
-    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-    font-weight: 200;
-  }
-  h1 {
-    font-weight: 100;
-  }
+* {
+  color: #2c3e50;
+  font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200; }
 
-  h2 {font-weight: 200}
-  h3 {font-weight: 200}
-  h4 {font-weight: 200}
+#logo {
+  align-self: center;
+  padding-top: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+h1 {
+  font-weight: 500;
+  background-color: #F7786B;
+  text-align: center;
+  color: white; }
+
+h2 {
+  font-weight: 100;
+  font-size: 80px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 0px;
+  text-align: center; }
+
+h3 {
+  font-weight: 200;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-bottom: 0px;
+  text-align: center; }
+
+h4 {
+  font-weight: 200; }
+
+.chart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center; }
+
 ul.li {
-  display: inline;
-}
- .name {
-   font-variant: small-caps;
- }
- .wrapper{
-   display: flex;
-   justify-content: center;
- }
- .containter{
-   display:inline-flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   justify-content: space-between;
-   align-content: space-between;
-   align-items: center;
- }
- .character_wrapper{
-   padding: 10px;
-   border: 1px solid white;
-   width: 15%;
-   background-color: white;
- }
- .character img {
-   width: 100%;
-   height: 150px; 
- }
+  display: inline; }
+
+td {
+  font-weight: 100;
+  padding: 5px; }
+
+th {
+  font-weight: normal;
+  padding: 5px; }
+
+.wrapper {
+  display: flex;
+  justify-content: center; }
+
+.containter {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center; }
+
+.character_wrapper {
+  padding: 10px;
+  border: 1px solid white;
+  width: 15%;
+  background-color: white; }
+
+.character img {
+  width: 100%;
+  height: 150px; }
+
+.planet_wrapper {
+  padding: 15px;
+  border: 1px solid white; }
+
+.chart {
+  height: 500px;
+  align-content: center;
+  padding: 20px 30%; }
+
+#piechart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  border: 1px solid #F7CAC9; }
+
+#Mars {
+  background-color: #DD4132; }
+
+#Earth {
+  background-color: #79C753; }
+
+#Moon {
+  background-color: #B3B3B3; }
+
+#Uranus {
+  background-color: #98DDDE; }
+
+#Pluto {
+  background-color: #B18F6A; }
+
+#Saturn {
+  background-color: #F7CAC9; }
+
+#Jupiter {
+  background-color: #FAE13C; }
+
+#Mercury {
+  background-color: #91A8D0; }
+
+.planet {
+  height: 100px;
+  width: 120px;
+  font-weight: bolder;
+  align-content: center;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 100%; }
+
+.character_wrapper {
+  background-color: #034F84;
+  min-width: 150px; }
+
+.name {
+  color: white;
+  font-size: 30px; }
+
+.bonus {
+  color: white; }
+
+.shipments_made {
+  color: white; }
+
+.wrapper {
+  flex-wrap: wrap; }
+
+.character_wrapper {
+  flex-wrap: wrap; }
+
+.footer {
+  color: #B3B3B3;
+  background-color: #034F84;
+  text-align: center; }
+
+.footer i {
+  color: #B3B3B3; }
+
+/*# sourceMappingURL=styles.css.map */
